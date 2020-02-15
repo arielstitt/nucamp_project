@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css" />
     <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css" />
+
     <!-- Additional CSS must be placed after Bootstrap CSS -->
     <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster|Open+Sans" />
@@ -18,7 +19,7 @@
 </head>
 
 <body>
-
+    <!-- HEADER -->
     <header class="jumbotron jumbotron-fluid">
         <div class="container">
             <div class="row">
@@ -30,82 +31,80 @@
                     <h2>a better way to camp</h2>
                 </div>
                 <div class="col-md-4 col-xl-2 mt-4">
-                    <a role="button" data-toggle="modal" data-target="#reserveModal" class="btn btn-lg btn-info">
+                    <a role="button" 
+                        data-toggle="modal" 
+                        data-target="#reserveModal" 
+                        class="btn btn-lg btn-info">
                         Reserve Campsite</a>
                 </div>
             </div>
         </div>
     </header>
-    <div id="reserveModal" class="modal fade bd-example-modal-lg" role="dialog">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <!-- content header -->
-                <div class="modal-header bg-info text-white">
-                    <h3 class="modal-title">Reserve a Campsite</h3>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-
-                <div class="modal-body">
-                    <div class="container-fluid">
-                        <!-- form starts here -->
-                        <form>
-                            <div class="form-group row">
-                                <div class="col-6">
-                                    <label for="exampleFormControlSelect1" class="col col-form-label">Number of
-                                        Campers
-                                    </label>
-                                </div>
-                                <div class="col">
-                                    <select class="form-control" id="exampleFormControlSelect1">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-6">
-                                    <label for="exampleFormControlSelect1" class="col col-form-label">Email </label>
-                                </div>
-                                <div class="col">
-                                    <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-6">
-                                    <label for="exampleFormControlSelect1" class="col col-form-label">Campsite Type
-                                    </label>
-                                </div>
-                                <div class="col">
-                                    <div class=" btn-group btn-group-toggle" data-toggle="buttons">
-                                        <label class="btn btn-success btn-secondary active">
-                                            <input type="radio" name="tent" id="tent" autocomplete="off" checked>
-                                            Tent
-                                        </label>
-                                        <label class="btn btn-primary">
-                                            <input type="radio" name="rv" id="rv" autocomplete="off"> RV
-                                        </label>
-                                      
+    <!-- RESERVE MODAL -->
+    <div id="reserveModal" class="modal fade" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <!-- content header -->
+                    <div class="modal-header bg-info text-white">
+                        <h3 class="modal-title">Reserve a Campsite</h3>
+                        <!-- PART 2 BUTTON -->
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+    
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <form>
+                                <div class="form-group row">
+                                    <label for="numCampers" class="col-sm-6 col-form-label">Number of Campers</label>
+                                    <!-- Select Dropdown -->
+                                    <div class="col">
+                                        <select name="numCampers" id="numCampers" class="form-control">
+                                            <option selected>Select...</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                        </select>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="form-row">
-                                <button type="button" class="btn btn-secondary btn-sm"
-                                    data-dismiss="modal">Cancel</button>
-                                <button type="submit" class="btn btn-primary btn-sm ml-1">Search</button>
-                            </div>
+                                <!-- Date -->
+                                <div class="form-group row">
+                                    <label for="date" class="col-sm-6 col-form-label">Date</label>
+                                    <div class="col">
+                                        <input type="date" class="form-control" id="date" name="date" placeholder="Date" />
+                                    </div>
+                                </div>
+                                <!-- Campsite Type -->
+                                <div class="form-group row">
+                                    <label class="col-sm-6 col-form-label">Campsite Type</label>
+                                    <!-- radio buttons -->
+                                    <div class="col btn-group btn-group-toggle" data-toggle="buttons">
+                                        <label class="btn btn-success col-form-label active">
+                                            <input type="radio" name="siteType" id="siteTent" value="tent"
+                                                autocomplete="off" checked />Tent
+                                        </label>
+                                        <label class="btn btn-primary col-form-label">
+                                            <input type="radio" name="siteType" id="siteRV" value="RV"
+                                                autocomplete="off" />RV
+                                        </label>
+                                    </div>
+                                </div>
+                                <!-- Search Button -->
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                        <button type="submit" class="btn btn-primary">Search</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
                     </div>
-                    </form>
                 </div>
             </div>
         </div>
-    </div>
-
-    </div>
-    </div>
-
+    <!-- NAV BAR -->
     <nav class="navbar navbar-expand-sm navbar-dark sticky-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">
@@ -131,7 +130,8 @@
             </div>
         </div>
     </nav>
-
+    
+    <!-- LOGIN MODAL -->
     <div id="loginModal" class="modal fade" role="dialog">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
@@ -170,47 +170,68 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 
     <div class="container">
+        <!-- DISCOVER AND REVIEW -->
         <div class="row align-items-center row-content">
             <div class="col-sm-4 order-sm-last col-md-3">
                 <h2 class="text-sm-right">Discover & Review</h2>
             </div>
             <div class="col">
-                <h3>Our Campsites</h3>
-                <p class="d-none d-sm-block">Explore our growing database of curated campsites and leave your own
-                    reviews!</p>
+                <div class="media">
+                    <img class="d-flex mr-3 img-thumbnail" src="img/breadcrumb-trail-thumb.jpg" alt="Breadcrumb Trail">
+                    <div class="media-body align-self-center">
+                        <h3>Our Campsites</h3>
+                        <p class="d-none d-sm-block">Explore our growing database of curated campsites and leave
+                            your
+                            own
+                            reviews!</p>
+                    </div>
+                </div>
             </div>
         </div>
-
-
+        <!-- FEATURED CAMPSITES -->
         <div class="row align-items-center row-content">
             <div class="col-sm-4 col-md-3">
                 <h2 class="text-sm-right">Featured Campsites</h2>
             </div>
+
             <div class="col">
-                <h3>React Lake Campground</h3>
-                <p class="d-none d-sm-block">Nestled in the foothills of the Chrome Mountains, this campground on the
-                    shores of the pristine React
-                    Lake is a favorite for fly fishers.</p>
+                <div class="media">
+                    <div class="media-body align-self-center">
+                        <h3>React Lake Campground</h3>
+                        <p class="d-none d-sm-block">Nestled in the foothills of the Chrome Mountains, this
+                            campground
+                            on
+                            the
+                            shores of the pristine React
+                            Lake is a favorite for fly fishers.</p>
+                    </div>
+                    <img class="d-flex ml-3 img-thumbnail" src="img/react-lake-thumb.jpg" alt="">
+                </div>
             </div>
         </div>
-
+        <!-- row content -->
         <div class="row align-items-center row-content">
             <div class="col-sm-4 order-sm-last col-md-3">
                 <h2 class="text-sm-right">Our Community Partners</h2>
             </div>
             <div class="col">
-                <h3>Bootstrap Outfitters</h3>
-                <p class="d-none d-sm-block">Bootstrap Outfitters supplies you with gear you need at prices you can't
-                    beat.</p>
+                <div class="media">
+                    <img class="d-flex mr-3 img-thumbnail " src="img/bootstrap-thumb.png" alt="Bootstrap Outfitters">
+                    <div class="media-body align-self-center">
+                        <h3>Bootstrap Outfitters</h3>
+                        <p class="d-none d-sm-block">Bootstrap Outfitters supplies you with gear you need at prices
+                            you
+                            can't beat.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-
+    <!-- FOOTER -->
     <footer class="site-footer">
         <div class="container">
             <div class="row">
