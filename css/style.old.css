@@ -38,4 +38,14 @@ header h2 {
     border-top: none;
     padding: 10px;
 }
-
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.carouel {
+    border: solid #5637dd;
+}
+#carouselButton {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
