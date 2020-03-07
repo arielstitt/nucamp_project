@@ -10,36 +10,39 @@ h2 {
 header h2 {
   color: #CEC8FF; }
 
-.jumbotron {
-  margin: 0;
-  padding: 30px;
-  background-image: linear-gradient(to right, #5637dd, #3046C5, #601068);
-  color: white; }
-
 .site-footer {
   background-image: linear-gradient(#CEC8FF, white);
   padding: 20px 0; }
+
+.jumbotron {
+  margin: 0;
+  padding: 30px;
+  background-image: linear-gradient(to right, #5637DD, #3046C5, #60106B);
+  color: white; }
 
 .row-content {
   padding: 50px 0;
   border-bottom: 1px ridge;
   min-height: 200px; }
 
-.navbar {
+.navbar-dark {
   background-color: #901CAD; }
 
-.tab-content {
-  border: 1px solid #ddd;
-  border-top: none;
-  padding: 10px; }
+.carousel {
+  border: solid #5637DD; }
 
 .carousel-caption {
   background-color: rgba(0, 0, 0, 0.5); }
-
-.carouel {
-  border: solid #5637dd; }
 
 #carouselButton {
   position: absolute;
   right: 0;
   bottom: 0; }
+
+#reserveModal .modal-header {
+  background-color: #17A2B8;
+  color: white; }
+
+#loginModal .modal-header {
+  background-color: #901CAD;
+  color: white; }
